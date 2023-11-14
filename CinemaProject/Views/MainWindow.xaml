@@ -1,0 +1,32 @@
+﻿<Window x:Class="CinemaProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CinemaProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1000" WindowState="Maximized" WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding SearchText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                     FontSize="26" FontWeight="ExtraBlack" Width="800"
+                    VerticalContentAlignment="Center"
+                     ></TextBox>
+            <Button Command="{Binding SearchCommand}" Background="Transparent" HorizontalAlignment="Right"
+                    FontSize="26" FontWeight="ExtraBlack"  Content="Search" Width="200"
+                    ></Button>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1">
+            <WrapPanel Orientation="Horizontal" Name="myPanel" Panel.ZIndex="2" >
+                
+            </WrapPanel>
+        </ScrollViewer>
+        
+    </Grid>
+</Window>
